@@ -258,111 +258,61 @@
         "id": "numeros3-0",
         "titulo": "/titulos/30tn.svg",
         "video": "/videos/30vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/cerosin.svg",
-        "bdere2": "/barraderecha/1n.svg",
-        "bdere3": "/barraderecha/2n.svg",
-        "bdere4": "/barraderecha/3n.svg",
-        "bdere5": "/barraderecha/4n.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 0."
     },
     {
         "id": "numeros3-1",
         "titulo": "/titulos/31tn.svg",
         "video": "/videos/31vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/ceron.svg",
-        "bdere2": "/barraderecha/1sin.svg",
-        "bdere3": "/barraderecha/2n.svg",
-        "bdere4": "/barraderecha/3n.svg",
-        "bdere5": "/barraderecha/4n.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 1."
     },
     {
         "id": "numeros3-2",
         "titulo": "/titulos/32tn.svg",
         "video": "/videos/32vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/ceron.svg",
-        "bdere2": "/barraderecha/1n.svg",
-        "bdere3": "/barraderecha/2n.svg",
-        "bdere4": "/barraderecha/3sin.svg",
-        "bdere5": "/barraderecha/4n.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 2."
     },
     {
         "id": "numeros3-3",
         "titulo": "/titulos/33tn.svg",
         "video": "/videos/33vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/ceron.svg",
-        "bdere2": "/barraderecha/1n.svg",
-        "bdere3": "/barraderecha/2n.svg",
-        "bdere4": "/barraderecha/3n.svg",
-        "bdere5": "/barraderecha/4sin.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 3."
     },
     {
         "id": "numeros3-4",
         "titulo": "/titulos/34tn.svg",
         "video": "/videos/34vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/ceron.svg",
-        "bdere2": "/barraderecha/1n.svg",
-        "bdere3": "/barraderecha/2n.svg",
-        "bdere4": "/barraderecha/3n.svg",
-        "bdere5": "/barraderecha/4sin.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 4."
     },
     {
         "id": "numeros3-5",
         "titulo": "/titulos/35tn.svg",
         "video": "/videos/35vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/5sin.svg",
-        "bdere2": "/barraderecha/6n.svg",
-        "bdere3": "/barraderecha/7n.svg",
-        "bdere4": "/barraderecha/8n.svg",
-        "bdere5": "/barraderecha/9n.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 5."
     },
     {
         "id": "numeros3-6",
         "titulo": "/titulos/36tn.svg",
         "video": "/videos/36vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/5n.svg",
-        "bdere2": "/barraderecha/6sin.svg",
-        "bdere3": "/barraderecha/7n.svg",
-        "bdere4": "/barraderecha/8n.svg",
-        "bdere5": "/barraderecha/9n.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 6."
     },
     {
         "id": "numeros3-7",
         "titulo": "/titulos/37tn.svg",
         "video": "/videos/37vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/5n.svg",
-        "bdere2": "/barraderecha/6n.svg",
-        "bdere3": "/barraderecha/7sin.svg",
-        "bdere4": "/barraderecha/8n.svg",
-        "bdere5": "/barraderecha/9n.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 7."
     },
     {
         "id": "numeros3-8",
         "titulo": "/titulos/38tn.svg",
         "video": "/videos/38vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/5n.svg",
-        "bdere2": "/barraderecha/6n.svg",
-        "bdere3": "/barraderecha/7n.svg",
-        "bdere4": "/barraderecha/8sin.svg",
-        "bdere5": "/barraderecha/9n.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 8."
     },
     {
         "id": "numeros3-9",
         "titulo": "/titulos/39tn.svg",
         "video": "/videos/39vn.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/5n.svg",
-        "bdere2": "/barraderecha/6n.svg",
-        "bdere3": "/barraderecha/7n.svg",
-        "bdere4": "/barraderecha/8n.svg",
-        "bdere5": "/barraderecha/9sin.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar el número 9."
     }
     
     

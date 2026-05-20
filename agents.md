@@ -92,20 +92,21 @@ Desarrollo:
 - Lógica de video estabilizada con soporte para reinicio y control de estado.
 
 Contenido Implementado:
-- Sección A (Punto de Partida): Página introductoria `puntoa-a.astro` ya implementada; actualmente en desarrollo la parte A de Punto de partida.
-- Sección B (Motricidad Fina): 12 actividades completamente implementadas:
+- Sección A (Punto de Partida): página introductoria `puntoa-a.astro` implementada, junto con los pasos `paso1.astro` a `paso4.astro`.
+- Sección B (Motricidad Fina): 16 actividades implementadas:
   - Modelado 1: 4 actividades (modelado1-1 a modelado1-4)
   - Plegado 3: 4 actividades (plegado3-1 a plegado3-4)
   - Recortado 2: 4 actividades (recortado2-1 a recortado2-4)
-  - Coloreado: 4 actividades — estructura implementada; contenido pendiente de completar.
+  - Coloreado 4: 4 actividades (coloreado4-1 a coloreado4-4)
 - Sección C (Pregraficos): 
-  - Grafomotriz ya montada y navegable.
-  - Trazos: 1 actividad implementada (trazos1.astro)
-  - Números y Vocales: estructura preparada; solo faltan los videos.
+  - Grafomotriz montada y navegable.
+  - Trazos: 4 actividades implementadas (trazos1-1 a trazos1-4).
+  - Números: 5 actividades implementadas (numeros3-0 a numeros3-4).
+  - Vocales: 5 actividades implementadas (vocales2-1 a vocales2-5).
 
 Datos: 
-- `tablavideos.json`: Contiene datos para actividades de modelado, plegado y recortado.
-- `tablatutorial.json`: Contiene contenido tutorial para la introducción.
+- `tablavideos.json`: Contiene datos para actividades de modelado, plegado, recortado, coloreado, trazos, números y vocales.
+- `tablatutorial.json`: Contiene contenido tutorial y guía introductoria para Punto de Partida.
 
 Incidencias Técnicas:
 - Error intermitente detectado: `fatal: unable to access ...`. Generalmente asociado a problemas temporales de DNS o conexión a internet.

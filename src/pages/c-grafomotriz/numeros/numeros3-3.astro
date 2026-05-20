@@ -10,6 +10,8 @@ import tablavideos from "../../../../tablavideos.json";
 import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
 import Pizarragrafo from "../../../components/Pizarragrafo.astro";
 import PaginaMaestrapuntoc from "../../layouts/PaginaMaestrapuntoc.astro";
+import MenuDerechoNumeros from "../../../components/MenuDerechoNumeros.astro";
+
 
 // Buscamos el ejercicio que coincida con esta página
 const miejercicio = tablavideos.find((item) => item.id === "numeros3-3");
@@ -17,6 +19,10 @@ const miejercicio = tablavideos.find((item) => item.id === "numeros3-3");
 // Recibimos los datos como parámetros
 const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
     Astro.props;
+
+    // Extraes el último numerito del ID ("numeros3-0" -> "0")
+const numeroActual = miejercicio.id.slice(-1);
+
 ---
 
 <PaginaMaestrapuntoc>
@@ -32,7 +38,12 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             <img class="barradere" src="/barraderecha.svg" alt="" />
         </div>
 
-        <div id="bbarraderecha">
+        
+        
+        
+        <MenuDerechoNumeros currentNumber={numeroActual}/>
+
+        <!-- <div id="bbarraderecha">
             <a href="/c-grafomotriz/numeros/numeros3-0/"><img class="ejers" src={miejercicio.bdere1} alt="" />
                     </a>
 
@@ -51,7 +62,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             <a href="/c-grafomotriz/numeros/numeros3-4/"
                 ><img class="ejers" src={miejercicio.bdere5} alt="" />
             </a>
-        </div>
+        </div> -->
     </div>
 
     <style>
@@ -103,15 +114,11 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             margin-right: 27%;
         }
 
-        .ejerdiv {
-            max-width: 100%;
-            max-height: 10%;
-        }
-
         .ejers {
             width: 100%;
             height: 62%;
-            overflow: hidden;
+            transition: transform 0.3s ease; /* Agrega una transición suave para el efecto de zoom */
+            
         }
 
         .ejers:hover {
