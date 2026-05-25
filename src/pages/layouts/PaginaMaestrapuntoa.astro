@@ -65,9 +65,10 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     :root { --zoom-factor-alto: calc(100vh / 650px); }
     .super-contenedor {
         transform: scale(var(--zoom-factor-alto));
-        transform-origin: center center;
-        margin: 0 0 0 0;
+        transform-origin: center top;
+        margin: 0;
         overflow: visible;
+        min-height: 100dvh; /* 'dvh' es 'dynamic viewport height', especial para Safari móvil */
     }
 }
  
