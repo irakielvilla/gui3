@@ -57,21 +57,25 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
         transform-origin: center center;
         margin: 0 0 0 0;
         overflow: visible;
-        height: 98%;
     }
 }
 
 /* Para pantallas BAJITAS (ajusta por el alto) */
 @media screen and (max-height: 650px) {
-    :root { --zoom-factor-alto: calc(100vh / 650px); }
+    :root { --zoom-factor-alto: calc(100vh / 750px); }
     .super-contenedor {
         transform: scale(var(--zoom-factor-alto));
         transform-origin: center top;
         overflow: visible;
-        min-height: 100dvh; /* 'dvh' es 'dynamic viewport height', especial para Safari móvil */
+        height: 100vh; /* Usamos alto dinámico */
+        margin-top: 5%;
     }
-}
- 
+        
+
+
+
+        /* 'dvh' es 'dynamic viewport height', especial para Safari móvil */
+  }
   /* --- FUENTE COINY --- */
   @font-face {
     font-family: 'Coiny';
