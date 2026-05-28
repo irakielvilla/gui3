@@ -1,37 +1,37 @@
 ---
 import AlertaVertical from "../../components/AlertaVertical.astro"
 ---
----
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
 	<body>
-		<AlertaVertical />
+    <body>
+    <AlertaVertical />
 
     <div class="super-contenedor">
         
         <slot />
 
     </div>
+</body>
 	</body>
 </html>
 
-
 <style>
-   .super-contenedor {
+  .super-contenedor {
     width: 1400px;
     /* 2. ¡CAMBIAMOS LA CHINCHETA! */
     /* Como el body ya lo está centrando, necesitamos que al achicarse 
        lo haga hacia su propio centro, no hacia el techo */
     transform-origin: center center;
     
-    overflow: hidden; 
+    overflow: visible; 
 }
 
 /* =========================================
@@ -62,14 +62,17 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
 
 /* Para pantallas BAJITAS (ajusta por el alto) */
 @media screen and (max-height: 650px) {
-    :root { --zoom-factor-alto: calc(100vh / 650px); }
+    :root { --zoom-factor-alto: calc(100vh / 750px); }
     .super-contenedor {
         transform: scale(var(--zoom-factor-alto));
-        transform-origin: center center;
-        margin: 0 0 0 0;
+        transform-origin: center top;
         overflow: visible;
+        height: 100vh; /* Usamos alto dinámico */
+        margin-top: 5%;
     }
-}
+        
+        /* 'dvh' es 'dynamic viewport height', especial para Safari móvil */
+  }
   /* --- FUENTE COINY --- */
   @font-face {
     font-family: 'Coiny';
@@ -114,31 +117,31 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     margin: 0;
     padding: 0;
   }
-
-    
 /* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
   body {
+    background-color: #0059ff;
+    margin: 0;
+    padding: 0;
     /* --- CONFIGURACIÓN DE LA IMAGEN DE FONDO --- */
-    background-image: url('/public/bg/fondoazul.svg'); 
+    background-image: url('/bg/fondoazul.svg'); 
     /* Asegura que la imagen cubra toda la pantalla sin repetirse y esté centrada */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     /* Evita que el fondo se mueva si hay scroll */
-    background-attachment: fixed; 
 
     /* --- CONFIGURACIÓN DEL CENTRADO DEL CONTENEDOR --- */
     display: flex;
     justify-content: center; /* Centrado horizontal */
     align-items: center;     /* Centrado vertical */
-    min-height: 100vh;       /* Asegura que el body ocupe todo el alto de la pantalla del navegador */
+    height: 100dvh; /* Usamos alto dinámico */
+    width: 100vw;
     
     /* --- COMPORTAMIENTO DE SCROLL --- */
     /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
     overflow: hidden;
   }
 
- 
   
 
 </style>
