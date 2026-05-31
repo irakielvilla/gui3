@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-
-
-<body>
+---
+import PaginaMaestrapuntoa from "../layouts/PaginaMaestrapuntoa.astro"
+---
+<PaginaMaestrapuntoa>
     <div id="ContenedorPrin"> 
         <div class="titulo">
             <img src="/portada/ta.svg" alt="">
@@ -42,7 +35,7 @@
         </div>
             
             <div class="botonp">
-                 <a class="botonpa" href="/indice/portadillab">
+                 <a class="botonpa" href="/indice">
                     <img class="botonpimg" src="/portada/botonp.png" alt="Botón de Inicio">
                 </a>
             </div>
@@ -53,10 +46,6 @@
         
     
   </div>
-
-</body>
-</html>
-
 
 <style>
     .titulo img {
@@ -147,18 +136,20 @@ outline: none;
         width: fit-content;
     }
     .botonpimg {
-        width: 100%;
+        width: 80%;
         position: relative;
-
-
+        rotate: 180deg;
     }
     .botonp {
+        padding-top: 15%;
+        padding-bottom: 80%;
+        pading-right: 20%;
         margin-right: 20%;
         display: flex;
         justify-content: center;
         align-items: center;
-        grid-column: 17/19 !important;
-        grid-row: 12/14 !important;
+        grid-column: 15/18 !important;
+        grid-row: 6/9 !important;
         width: 100%;
         height: 100%;
         z-index: 10 !important;
@@ -215,3 +206,5 @@ outline: none;
         linear-gradient(to bottom, rgba(0,0,0,0.1) 41.12px, transparent 5.74px);
     background-size: calc(41.12px + 5.74px) calc(41.12px + 5.74px); */
         }
+
+        </PaginaMaestrapuntoa>

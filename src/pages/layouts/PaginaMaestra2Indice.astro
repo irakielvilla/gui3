@@ -1,0 +1,148 @@
+---
+import AlertaVertical from "../../components/AlertaVertical.astro"
+---
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+    <body>
+    <AlertaVertical />
+
+    <div class="super-contenedor">
+        
+        <slot />
+
+    </div>
+</body>
+	</body>
+</html>
+
+<style>
+  .super-contenedor {
+    width: 1400px;
+    /* 2. ¡CAMBIAMOS LA CHINCHETA! */
+    /* Como el body ya lo está centrando, necesitamos que al achicarse 
+       lo haga hacia su propio centro, no hacia el techo */
+    transform-origin: center center;
+    
+    overflow: visible; 
+}
+
+/* =========================================
+   2. TUS REGLAS DE ZOOM (Responsive)
+   ========================================= */
+
+/* Para pantallas GIGANTES (hace Zoom In) */
+@media screen and (min-width: 1400px) {
+    :root { --zoom-factor: calc(100vw / 1400px); }
+    .super-contenedor {
+        transform: scale(var(--zoom-factor));
+        transform-origin: center center;
+        margin: 0 0 0 0;
+        overflow: visible;
+    }
+}
+
+/* Para pantallas PEQUEÑAS (hace Zoom Out) */
+@media screen and (max-width: 1399px) {
+    :root { --zoom-factor-reduccion: calc(100vw / 1400px); }
+    .super-contenedor {
+        transform: scale(var(--zoom-factor-reduccion));
+        transform-origin: center center;
+        margin: 0 0 0 0;
+        overflow: visible;
+    }
+}
+
+/* Para pantallas BAJITAS (ajusta por el alto) */
+@media screen and (max-height: 650px) {
+    :root { --zoom-factor-alto: calc(100vh / 750px); }
+    .super-contenedor {
+        transform: scale(var(--zoom-factor-alto));
+        transform-origin: center top;
+        overflow: visible;
+        height: 100vh; /* Usamos alto dinámico */
+        margin-top: 5%;
+    }
+        
+        /* 'dvh' es 'dynamic viewport height', especial para Safari móvil */
+  }
+  /* --- FUENTE COINY --- */
+  @font-face {
+    font-family: 'Coiny';
+    src: url('/fonts/Coiny-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* --- FUENTE FREDOKA --- */
+  /* Registramos el peso Light */
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('/fonts/Fredoka-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Registramos el peso Regular */
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('/fonts/Fredoka-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Registramos el peso SemiBold */
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('/fonts/Fredoka-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+  /* 1. Reset básico para asegurar que las medidas son exactas y no hay márgenes molestos */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+/* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
+  body {
+    background-color: #a4a4a4;
+    margin: 0;
+    padding: 0;
+    overflow: visible; /* Evita scroll innecesario */
+    /* --- CONFIGURACIÓN DE LA IMAGEN DE FONDO --- */
+     background-image: url('/bg/fondoblanco.svg');
+    /* Asegura que la imagen cubra toda la pantalla sin repetirse y esté centrada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Evita que el fondo se mueva si hay scroll */
+
+    /* --- CONFIGURACIÓN DEL CENTRADO DEL CONTENEDOR --- */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    height: 100dvh; /* Usamos alto dinámico */
+    width: 100vw;
+    
+    /* --- COMPORTAMIENTO DE SCROLL --- */
+    /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
+    overflow: hidden;
+  }
+
+  
+
+</style>

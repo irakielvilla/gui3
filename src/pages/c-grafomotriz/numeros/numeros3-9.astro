@@ -42,7 +42,15 @@ const numeroActual = miejercicio.id.slice(-1);
         
         
         <MenuDerechoNumeros currentNumber={numeroActual}/>
+        <div class="personaje">
+            <img src="/personajes/lcp.svg" alt="">  
+        </div>
 
+        <div class="botonp">
+                 <a class="botonpa" href="/indice/contraportada">
+                    <img class="botonpimg" src="/portada/botonpamarillo.png" alt="Botón de Inicio">
+                </a>
+            </div>
         <!-- <div id="bbarraderecha">
             <a href="/c-grafomotriz/numeros/numeros3-0/"><img class="ejers" src={miejercicio.bdere1} alt="" />
                     </a>
@@ -66,6 +74,45 @@ const numeroActual = miejercicio.id.slice(-1);
     </div>
 
     <style>
+        .botonpa {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+    }
+    .botonpimg {
+        width: 80%;
+        position: relative;
+        left: 12%;
+
+
+    }
+    .botonp {
+        padding-top: 15%;
+        padding-bottom: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 27/29 !important;
+        grid-row: 1/4 !important;
+        width: 100%;
+        height: 100%;
+        z-index: 10 !important;
+    }
+        .personaje {
+            grid-column: 23/26;
+            grid-row: 1/6;
+            width: 100%;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 30%;
+            padding-left: 20%;
+        }
+        .personaje img {
+            object-fit: contain;
+            height: 85%;
+        }
         #ContenedorPrin {
             display: grid;
             width: 1400px;
