@@ -56,39 +56,127 @@ const SelectedBarra = COMPONENTS[section] || Barramodelado;
     }
 
     /* Aplicamos :global para que el hover funcione sobre los IDs internos del SVG */
-    :global(#puntoa:hover),
-    :global(#motricidadb:hover),
-    :global(#grafomotrizc:hover) {
+
+    :global(#puntoa){
+        transition: transform 0.3s ease;
+         transform-origin: center center !important;
+    }
+    :global(#puntoa:hover){
         transform: scale(1.15);
         transform-origin: center center !important;
-        transform-box: fill-box;
-        cursor: pointer;
+    }
+    :global(#motricidadb){
+        transition: transform 0.3s ease;
+         transform-origin: center center !important;
+    }
+    :global(#motricidadb:hover){
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }
+    :global(#grafomotrizc){
+        transition: transform 0.3s ease;
+         transform-origin: center center !important;
+    }
+    :global(#grafomotrizc:hover){
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }
+
+    :global(#modelado1){
+        transition: transform 0.3s ease;
+         transform-origin: center center !important;
+    }
+    :global(#modelado1:hover){
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }:global(#recortado2){
+        transition: transform 0.3s ease;
+         transform-origin: center center !important;
+    }
+    :global(#recortado2:hover){
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }:global(#plegado3){
+        transition: transform 0.3s ease;
+         transform-origin: center center !important;
+    }
+    :global(#plegado3:hover){
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }:global(#coloreado4){
+        transition: transform 0.3s ease;
+         transform-origin: center center !important;
+    }
+    :global(#coloreado4:hover){
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }
+
+
+    :global(#paso1) {
+    transition: transform 0.3s ease;
+    transform-origin: center center !important;
     }
     
-    :global(#modelado1:hover),
-    :global(#recortado2:hover),
-    :global(#plegado3:hover),
-    :global(#coloreado4:hover) {
-        transform: scale(1.09);
+
+    :global(#paso1:hover) {
+        transform: scale(1.15);
         transform-origin: center center !important;
-        transform-box: fill-box;
-        cursor: pointer;
     }
-    :global(#paso1:hover),
-    :global(#paso2:hover),
-    :global(#paso3:hover),
+    :global(#paso2) {
+    transition: transform 0.3s ease;
+    transform-origin: center center !important;
+    }
+
+    :global(#paso2:hover) {
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }
+    :global(#paso3) {
+    transition: transform 0.3s ease;
+    transform-origin: center center !important;
+    }
+
+    :global(#paso3:hover) {
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }
+    :global(#paso4) {
+    transition: transform 0.3s ease;
+    transform-origin: center center !important;
+    }
+
     :global(#paso4:hover) {
-        transform: scale(1.09);
+        transform: scale(1.15);
         transform-origin: center center !important;
-        transform-box: fill-box;
-        cursor: pointer;
     }
-    :global(#trazos1:hover),
-    :global(#vocales2:hover),
+        
+
+    :global(#trazos1) {
+    transition: transform 0.3s ease;
+    transform-origin: center center !important;
+    }
+
+    :global(#trazos1:hover) {
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }
+
+    :global(#vocales2) {
+    transition: transform 0.3s ease;
+    transform-origin: center center !important;
+    }
+
+    :global(#vocales2:hover) {
+        transform: scale(1.15);
+        transform-origin: center center !important;
+    }:global(#numeros3) {
+    transition: transform 0.3s ease;
+    transform-origin: center center !important;
+    }
+
     :global(#numeros3:hover) {
         transform: scale(1.15);
         transform-origin: center center !important;
-        transform-box: fill-box;
-        cursor: pointer;
     }
 </style>

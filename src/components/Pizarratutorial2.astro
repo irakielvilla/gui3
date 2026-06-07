@@ -48,11 +48,7 @@ const paginas = pagKeys.map(key => {
 
 <div id="fondoazulinfo"></div>
 
-<div id="contenedor-info">
-  {paginas[0] && (
-    <img id="img-tutorial-dinamica" src={paginas[0].src} alt="Material Inicial" />
-  )}
-</div>
+
 
 <div id="contenedor-swiper-texto">
   <div class="swiper mySwiperTutorial">
@@ -169,22 +165,7 @@ const paginas = pagKeys.map(key => {
     border-radius: 20px;
   }
 
-  #contenedor-info {
-    grid-row: 6/13;
-    grid-column: 7/13;
-    background-color: #E0B812;
-    z-index: 5;
-    border-radius: 0px 54px 54px 0px;
-    margin: 15% 13% 15% 15%;
-    border-top: 5.9px solid #AA8B0B;
-    border-right: 5.9px solid #AA8B0B;
-    border-bottom: 5.9px solid #AA8B0B;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    opacity: 0%;
-  }
+
 
   #img-tutorial-dinamica {
     max-width: 90%;
@@ -199,6 +180,7 @@ const paginas = pagKeys.map(key => {
     z-index: 5;
     box-sizing: border-box;
     margin-top: 10%;
+    margin-right: 7%;
   }
 
   .swiper {
@@ -225,7 +207,7 @@ const paginas = pagKeys.map(key => {
   }
 
   .swiper-pagination {
-    top: 85% !important;
+    top: 78% !important;
     bottom: 17% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;

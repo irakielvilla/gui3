@@ -25,6 +25,12 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
 
         <Pizarra miejercicio={miejercicio} />
 
+        <div class="botonp">
+                 <a class="botonpa" href="/c-grafomotriz/trazos/trazos1-1/">
+                    <img class="botonpimg" src="/portada/botonpamarillo.png" alt="Botón de Inicio">
+                </a>
+            </div>
+
         <div id="barraderecha">
             <img class="barradere" src="/barraderecha.svg" alt="" />
         </div>
@@ -46,28 +52,57 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
                 ><img class="ejers" src={miejercicio.bdere4} alt="" />
             </a>
         </div>
-        <div class="personaje">
-            <img id="perso" src="/personajes/l11.svg" alt="">
-            <img class="manos" src="/personajes/l11ma.svg" alt="">
-           
-        </div> 
-
+         <div class="personaje">
+            <img src="/personajes/lcp.svg" alt="">  
+        </div>
     </div>
 
     <style>
         .personaje {
-            grid-column: 21/25;
-            grid-row: 2/6;
-            width: 100%;
-            padding-right: 5%;
+            grid-column: 23/26;
+            grid-row: 1/6;
+            width: 85%;
+            z-index: 5;
             display: flex;
-            position: relative;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 32%;
+            padding-left: 56%;
         }
         .personaje img {
+            object-fit: contain;
             width: 100%;
-            height: 100%;
-            position: absolute;
         }
+           :global(.botonpimg:hover){
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
+        
+        .botonpa {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+    }
+    .botonpimg {
+        width: 80%;
+        position: relative;
+        left: 12%;
+        transition: transform 0.3s ease;
+
+
+    }
+    .botonp {
+        padding-top: 15%;
+        padding-bottom: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 27/29 !important;
+        grid-row: 1/4 !important;
+        width: 100%;
+        height: 100%;
+        z-index: 10 !important;
+    }
 
         #perso {
             z-index: 0;
