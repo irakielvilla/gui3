@@ -9,7 +9,7 @@ import PaginaMaestra1 from "./layouts/PaginaMaestra1.astro"
             
             <div class="botonp">
                  <a class="botonpa" href="/indice">
-                    <img class="botonpimg" src="/portada/botonp.png" alt="Botón de Inicio">
+                    <img class="botonpimg" src="/portada/botonp.svg" alt="Botón de Inicio">
                 </a>
             </div>
         <div class="personaje">
@@ -55,7 +55,6 @@ outline: none;
 
         padding-top: 4%;
         height: 80%;
-        padding-right: 8%;
         padding-top: 10%;
         object-fit: fill;
         
@@ -78,16 +77,18 @@ outline: none;
     }
     .botonpimg {
         transition: transform 0.3s ease;
-        width: 70%;
+        width: 33%;
         position: relative;
-        padding-left: 4%;
-        padding-bottom: 6%;
+        padding-left: 28%;
+        padding-bottom: 4%;
+        transform-origin: center center;
 
     }
 
         .botonpimg:hover{
         transform: scale(1.1);
          transition: transform 0.3s ease;
+         transform-origin: center center;
     }
 
     .botonp {

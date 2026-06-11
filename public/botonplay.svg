@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 86.15 55.78"><defs><style>.cls-1{fill:none;}.cls-2{fill:#fcdf50;}.cls-3{fill:url(#New_Pattern_Swatch_4);}.cls-4{fill:#148adb;stroke:#fff;stroke-width:2px;}.cls-5{fill:#fff;}</style><pattern id="New_Pattern_Swatch_4" data-name="New Pattern Swatch 4" width="131.34" height="220.57" patternTransform="translate(168.23 -283.94) rotate(90) scale(0.1 0.25)" patternUnits="userSpaceOnUse" viewBox="0 0 131.34 220.57"><rect class="cls-1" width="131.34" height="220.57"/><rect class="cls-2" width="131.34" height="220.57"/></pattern></defs><title>botonplay</title><g id="Layer_2" data-name="Layer 2"><g id="botones_play_y_repeat" data-name="botones play y repeat"><path class="cls-3" d="M86.15,45.35v-34C86.15,5.1,81.34,0,75.43,0H0V55.78H76.3C81.73,55.78,86.15,51.1,86.15,45.35Z"/><circle class="cls-4" cx="65.04" cy="27.06" r="13.87"/><path class="cls-5" d="M69.4,26.2,63,22.26a1,1,0,0,0-1.53.86V31a1,1,0,0,0,1.53.86l6.4-3.94A1,1,0,0,0,69.4,26.2Z"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 86.2 55.8" style="enable-background:new 0 0 86.2 55.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E7E800;}
+	.st1{fill:#24B2A0;stroke:#FFFFFF;stroke-width:2;}
+	.st2{fill:#FFFFFF;}
+</style>
+<title>botonplay</title>
+<g id="Layer_2_1_">
+	<g id="botones_play_y_repeat">
+		<path class="st0" d="M86.2,45.3v-34C86.2,5.1,81.3,0,75.4,0H0v55.8h76.3C81.7,55.8,86.2,51.1,86.2,45.3z"/>
+		<circle class="st1" cx="65" cy="27.1" r="13.9"/>
+		<path class="st2" d="M69.4,26.2L63,22.3c-0.5-0.3-1.1-0.2-1.4,0.3c-0.1,0.2-0.2,0.4-0.2,0.5V31c0,0.6,0.4,1,1,1
+			c0.2,0,0.4-0.1,0.5-0.2l6.4-3.9c0.5-0.3,0.6-0.9,0.3-1.4C69.7,26.4,69.5,26.3,69.4,26.2z"/>
+	</g>
+</g>
+</svg>

@@ -9,14 +9,14 @@ import Barraizquierda from "../../../components/barraizquierda.astro";
 import tablavideos from "../../../../tablavideos.json";
 
 // Buscamos el ejercicio que coincida con esta página
-const miejercicio = tablavideos.find((item) => item.id === "modelado1-1");
+const miejercicio = tablavideos.find((item) => item.id === "modelado1-2");
 
 // Recibimos los datos como parámetros
 const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
     Astro.props;
 ---
 
-<PaginaMaestra1 title="Modelado 1.1 - Motricidad Fina">
+<PaginaMaestra1 title="Dirección 1.2 - Motricidad Fina">
     <div id="ContenedorPrin">
         <!--inicio chorrera de codigo -->
         <Barraizquierda section="modelado" />
@@ -30,19 +30,19 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
         </div>
 
         <div id="bbarraderecha">
-            <a href="/b-motricidad/modelado1/modelado1-1/"
+            <a href="/b-motricidad/direccion1/direccion1-1/"
                 ><img class="ejers" src={miejercicio.bdere1} alt="" />
             </a>
 
-            <a href="/b-motricidad/modelado1/modelado1-2/"
+            <a href="/b-motricidad/direccion1/direccion1-2/"
                 ><img class="ejers" src={miejercicio.bdere2} alt="" />
             </a>
 
-            <a href="/b-motricidad/modelado1/modelado1-3/"
+            <a href="/b-motricidad/direccion1/direccion1-3/"
                 ><img class="ejers" src={miejercicio.bdere3} alt="" />
             </a>
 
-            <a href="/b-motricidad/modelado1/modelado1-4/"
+            <a href="/b-motricidad/direccion1/direccion1-4/"
                 ><img class="ejers" src={miejercicio.bdere4} alt="" />
             </a>
         </div>
@@ -52,11 +52,6 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
            
         </div>  
 
-        <div class="botonp">
-                 <a class="botonpa" href="/indice/portadillab">
-                    <img class="botonpimg" src="/portada/botonpamarillo.png" alt="Botón de Inicio">
-                </a>
-            </div>
     </div>
 
     <style>
@@ -70,7 +65,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
         width: fit-content;
     }
     .botonpimg {
-        width: 90%;
+        width: 58%;
         position: relative;
         rotate: 180deg;
         transition: transform 0.3s ease;
@@ -81,7 +76,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
         
         margin-right: 20%; */
         margin-top: 6%;
-        margin-left: 18%;
+        margin-left: 36%;
         display: flex;
         justify-content: center;
         align-items: center;
