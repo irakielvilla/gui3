@@ -1,11 +1,26 @@
 ---
-// Componente: MenuDerechoNumeros.astro
-const { currentNumber } = Astro.props;
-const integerNumber = parseInt(currentNumber, 10);
 
-// Astro decide qué bloque mostrar primero según el número de la página
+// Componente: MenuDerechoNumeros.astro
+const { currentNumber, miejercicio } = Astro.props;
+
+// 1. Limpieza a prueba de balas: Extraemos solo el número al final del string
+// Si recibe "letras1-1", match extraerá "1". Si recibe "letras1-10", extraerá "10".
+const stringCrudo = String(currentNumber || miejercicio?.id || '');
+const numeroExtraido = stringCrudo.match(/\d+$/);
+const integerNumber = numeroExtraido ? parseInt(numeroExtraido[0], 10) : 0;
+
+// 2. Astro decide qué bloque mostrar primero según el número de la página
+// Corregimos el rango: El Grupo 1 ahora contiene los números del 1 al 5
 const paginaInicialMenu = (integerNumber >= 0 && integerNumber <= 4) ? 1 : 2;
-const { miejercicio } = Astro.props;
+// 🔔 ALARMAS DE ASTRO (Se ven en la terminal)
+console.log("-----------------------------------------");
+console.log("🚨 ALARMA 1: Prop currentNumber:", currentNumber);
+console.log("🚨 ALARMA 2: Prop miejercicio?.id:", miejercicio?.id);
+console.log("🚨 ALARMA 3: stringCrudo evaluado:", stringCrudo);
+console.log("🚨 ALARMA 4: integerNumber final:", integerNumber);
+
+console.log("🚨 ALARMA 5: paginaInicialMenu calculada:", paginaInicialMenu);
+console.log("-----------------------------------------");
 
 
 ---
@@ -17,38 +32,38 @@ const { miejercicio } = Astro.props;
   </button>
 
   <div id="grupo-numeros-1" class="bloque-numeros">
-    <a href="/c-grafomotriz/numeros/numeros3-0/" class="btn-numero">
-      <img src={integerNumber === 0 ? "/barraderecha/cerosin.svg" : "/barraderecha/ceron.svg"} alt="Número 0"/>
+   <a href="/c-grafomotriz/numeros2/numeros2-20/" class="btn-numero">
+      <img id="numero1" src={integerNumber === 0 ? "/barraderecha/cerosin.svg" : "/barraderecha/ceron.svg"} alt="Número 0"/>
     </a>
-    <a id="numero1" href="/c-grafomotriz/numeros/numeros3-1/" class="btn-numero">
-      <img class="numerito1" src={integerNumber === 1 ? "/barraderecha/1sin.svg" : "/barraderecha/1n.svg"} alt="Número 1" />
+    <a href="/c-grafomotriz/numeros2/numeros2-21/" class="btn-numero">
+      <img  src={integerNumber === 1 ? "/barraderecha/1sin.svg" : "/barraderecha/1n.svg"} alt="Número 1" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-2/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-22/" class="btn-numero">
       <img src={integerNumber === 2 ? "/barraderecha/2sin.svg" : "/barraderecha/2n.svg"} alt="Número 2" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-3/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-23/" class="btn-numero">
       <img src={integerNumber === 3 ? "/barraderecha/3sin.svg" : "/barraderecha/3n.svg"} alt="Número 3" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-4/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-24/" class="btn-numero">
       <img src={integerNumber === 4 ? "/barraderecha/4sin.svg" : "/barraderecha/4n.svg"} alt="Número 4" />
     </a>
   </div>
 
   <div id="grupo-numeros-2" class="bloque-numeros oculto">
-    <a href="/c-grafomotriz/numeros/numeros3-5/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-25/" class="btn-numero">
       <img src={integerNumber === 5 ? "/barraderecha/5sin.svg" : "/barraderecha/5n.svg"} alt="Número 5" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-6/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-26/" class="btn-numero">
       <img src={integerNumber === 6 ? "/barraderecha/6sin.svg" : "/barraderecha/6n.svg"} alt="Número 6" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-7/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-27/" class="btn-numero">
       <img src={integerNumber === 7 ? "/barraderecha/7sin.svg" : "/barraderecha/7n.svg"} alt="Número 7" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-8/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-28/" class="btn-numero">
       <img src={integerNumber === 8 ? "/barraderecha/8sin.svg" : "/barraderecha/8n.svg"} alt="Número 8" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-9/" class="btn-numero">
-      <img src={integerNumber === 9 ? "/barraderecha/9sin.svg" : "/barraderecha/9n.svg"} alt="Número 9" />
+    <a href="/c-grafomotriz/numeros2/numeros2-29/" class="btn-numero">
+      <img id="numero10" src={integerNumber === 9 ? "/barraderecha/9sin.svg" : "/barraderecha/9n.svg"} alt="Número 9" />
     </a>
   </div>
 
@@ -59,22 +74,33 @@ const { miejercicio } = Astro.props;
 </div>
 
 <style>
+    #grupo-numeros-1 img{
+      width: 130%;
+      position: relative;
+
+    }
+    #grupo-numeros-2 img{
+      width: 130%;
+      position: relative;
+
+
+    }
   #btn-arriba{
-    margin-bottom: -30%;
+    margin-bottom: -10%;
     width: 60%;
+
   }
   #btn-abajo{
     width: 60%;
   }
 
-
-  .numerito1{
-    height: 100% !important;
+  /* #numero1{
+    height: 80% !important; 
   }
 
-  #numero1{
-    height: 20% !important; 
-  }
+  #numero10{
+    width: 220% !important; 
+  } */
   /* Contenedor principal que se alinea con tu Grid */
   .menu-interactivo-numeros {
     display: flex;
@@ -114,8 +140,10 @@ const { miejercicio } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6.6%; /* Espacio entre cada número */
     width: 100%;
+    gap: 10%;
+    position: relative; /* Para posicionar las flechas dentro del bloque */
+    bottom: 8%;
   }
 
   /* Clase para ocultar el bloque que no se está viendo */
@@ -125,12 +153,14 @@ const { miejercicio } = Astro.props;
 
   .btn-numero {
     display: block;
-    width: 18%; /* Ajusta según lo ancho que quieras los números */
+    width: 22.5%; /* Ajusta según lo ancho que quieras los números */
     transition: transform 0.2s ease;
+    padding-right: 7%;
+
   }
 
   .btn-numero img {
-    width: 100%;
+    width: 120%;
     height: auto;
     object-fit: contain;
   }
@@ -143,41 +173,51 @@ const { miejercicio } = Astro.props;
 
 <script>
   const inicializarMenuDerecho = () => {
+    console.log("🚀 ALARMA CLIENTE 1: Inicializando script de menú derecho...");
+    
     const menuContainer = document.querySelector('.menu-interactivo-numeros');
-    if (!menuContainer) return;
+    if (!menuContainer) {
+        console.error("❌ ERROR CRÍTICO: No se encontró el contenedor principal (.menu-interactivo-numeros)");
+        return;
+    }
 
     const paginaInicial = parseInt(menuContainer.getAttribute('data-pagina-inicial') || '1', 10);
+    console.log("🚀 ALARMA CLIENTE 2: data-pagina-inicial leído en HTML:", paginaInicial);
 
     const btnArriba = document.getElementById('btn-arriba');
     const btnAbajo = document.getElementById('btn-abajo');
     const grupo1 = document.getElementById('grupo-numeros-1');
     const grupo2 = document.getElementById('grupo-numeros-2');
 
-    if (!btnArriba || !btnAbajo || !grupo1 || !grupo2) return;
+    if (!btnArriba || !btnAbajo || !grupo1 || !grupo2) {
+        console.error("❌ ERROR CRÍTICO: Falta algún botón o grupo en el HTML.", {
+            btnArriba: !!btnArriba, 
+            btnAbajo: !!btnAbajo, 
+            grupo1: !!grupo1, 
+            grupo2: !!grupo2
+        });
+        return;
+    }
 
     let paginaActualMenu = paginaInicial;
 
-    // Función que actualiza lo que se ve en pantalla
     const actualizarVistaMenu = () => {
+      console.log("🔄 Actualizando vista a la página del menú:", paginaActualMenu);
       if (paginaActualMenu === 1) {
         grupo1.classList.remove('oculto');
         grupo2.classList.add('oculto');
-        
-        btnArriba.classList.add('desactivado'); // Bloqueamos ir más arriba del 0
-        btnAbajo.classList.remove('desactivado'); // Permitimos bajar al 5-9
+        btnArriba.classList.add('desactivado');
+        btnAbajo.classList.remove('desactivado');
       } else {
         grupo1.classList.add('oculto');
         grupo2.classList.remove('oculto');
-        
-        btnArriba.classList.remove('desactivado'); // Permitimos subir al 0-4
-        btnAbajo.classList.add('desactivado'); // Bloqueamos ir más abajo del 9
+        btnArriba.classList.remove('desactivado');
+        btnAbajo.classList.add('desactivado');
       }
     };
 
-    // Ejecutamos la lógica al cargar la página
     actualizarVistaMenu();
 
-    // Eventos de clic que NO recargan la página, solo cambian las imágenes
     btnArriba.addEventListener('click', () => {
       if (paginaActualMenu === 2) {
         paginaActualMenu = 1;
