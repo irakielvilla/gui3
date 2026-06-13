@@ -6,6 +6,9 @@ import PaginaMaestra1 from "./layouts/PaginaMaestra2Indice.astro"
 <PaginaMaestra2Indice title="Nivel 1 - Índice">
 <div class="super-contenedor"> 
     <div id="ContenedorPrin"> 
+        <div class="titulo">
+            <img src="/portada/conte.svg" alt="">
+        </div>
         <div class="opciones">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-8 0 775 381.59"><defs><style>.cls-1{isolation:isolate;}.cls-2{opacity:0.24;}.cls-13,.cls-2,.cls-6{mix-blend-mode:multiply;}.cls-11,.cls-12,.cls-16,.cls-18,.cls-19,.cls-22,.cls-3,.cls-5,.cls-9{fill:none;}.cls-3,.cls-5,.cls-9{stroke:#6d7a01;}.cls-3{stroke-width:10.21px;}.cls-4{fill:#fff;}.cls-12,.cls-19,.cls-5{stroke-width:4px;}.cls-6{opacity:0.89;}.cls-7{fill:url(#Degradado_sin_nombre_12_copia);}.cls-8{fill:url(#Degradado_sin_nombre_147);}.cls-9{stroke-width:18.56px;}.cls-10{fill:#e7e800;}.cls-11,.cls-16{stroke:#015b4e;}.cls-11{stroke-width:10.23px;}.cls-12{stroke:#24b2a0;}.cls-13{opacity:0.6;}.cls-14{fill:url(#Degradado_azul_verdoso);}.cls-15{fill:url(#Degradado_sin_nombre_147-2);}.cls-16,.cls-22{stroke-width:20px;}.cls-17{fill:#24b2a0;}.cls-18,.cls-22{stroke:#470126;}.cls-18{stroke-width:10.28px;}.cls-19{stroke:#ee3976;stroke-miterlimit:10;}.cls-20{fill:url(#Degradado_sin_nombre_19);}.cls-21{fill:url(#Degradado_sin_nombre_147-3);}.cls-23{fill:#ea367b;}</style><radialGradient id="Degradado_sin_nombre_12_copia" cx="83.22" cy="284.72" r="63.22" gradientUnits="userSpaceOnUse"><stop offset="0.52" stop-color="#fff"/><stop offset="0.66" stop-color="#fefefd"/><stop offset="0.72" stop-color="#fbfbf6"/><stop offset="0.76" stop-color="#f5f6e9"/><stop offset="0.79" stop-color="#edefd7"/><stop offset="0.83" stop-color="#e2e6c0"/><stop offset="0.85" stop-color="#d5dba4"/><stop offset="0.88" stop-color="#c5ce82"/><stop offset="0.9" stop-color="#b3be5a"/><stop offset="0.92" stop-color="#9fad2f"/><stop offset="0.94" stop-color="#899b01"/></radialGradient><linearGradient id="Degradado_sin_nombre_147" x1="82.75" y1="354.23" x2="82.75" y2="216.14" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.04" stop-color="#fff" stop-opacity="0.08"/><stop offset="0.2" stop-color="#fff" stop-opacity="0.35"/><stop offset="0.36" stop-color="#fff" stop-opacity="0.58"/><stop offset="0.49" stop-color="#fff" stop-opacity="0.76"/><stop offset="0.62" stop-color="#fff" stop-opacity="0.89"/><stop offset="0.72" stop-color="#fff" stop-opacity="0.97"/><stop offset="0.79" stop-color="#fff"/></linearGradient><radialGradient id="Degradado_azul_verdoso" cx="359.01" cy="285.42" r="62.81" gradientUnits="userSpaceOnUse"><stop offset="0.52" stop-color="#fff"/><stop offset="0.66" stop-color="#fdfefe"/><stop offset="0.72" stop-color="#f6f9f9"/><stop offset="0.76" stop-color="#e9f1f0"/><stop offset="0.79" stop-color="#d7e5e3"/><stop offset="0.83" stop-color="#c0d7d3"/><stop offset="0.85" stop-color="#a4c4bf"/><stop offset="0.88" stop-color="#82aea8"/><stop offset="0.9" stop-color="#5a958c"/><stop offset="0.92" stop-color="#2f796e"/><stop offset="0.94" stop-color="#015b4e"/></radialGradient><linearGradient id="Degradado_sin_nombre_147-2" x1="359.01" y1="354.14" x2="359.01" y2="216.7" xlink:href="#Degradado_sin_nombre_147"/><radialGradient id="Degradado_sin_nombre_19" cx="638.6" cy="286.13" r="63.07" gradientUnits="userSpaceOnUse"><stop offset="0.52" stop-color="#fff"/><stop offset="0.66" stop-color="#fffdfe"/><stop offset="0.72" stop-color="#fdf6f9"/><stop offset="0.76" stop-color="#fbe9f2"/><stop offset="0.79" stop-color="#f7d7e7"/><stop offset="0.83" stop-color="#f3c0d9"/><stop offset="0.85" stop-color="#eda4c7"/><stop offset="0.88" stop-color="#e782b2"/><stop offset="0.9" stop-color="#df5a9a"/><stop offset="0.92" stop-color="#d72f80"/><stop offset="0.94" stop-color="#ce0063"/></radialGradient><linearGradient id="Degradado_sin_nombre_147-3" x1="638.6" y1="355.13" x2="638.6" y2="217.13" xlink:href="#Degradado_sin_nombre_147"/></defs><title>opciones de indice svg</title>
 <g class="cls-1">
@@ -41,6 +44,21 @@ import PaginaMaestra1 from "./layouts/PaginaMaestra2Indice.astro"
 </div>   
 
 <style>
+    .titulo img {
+        width: 90%;
+        object-fit: contain;
+    }
+    .titulo {
+        padding-top: 2.5%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        grid-column: 2/11;
+        grid-row: 1/4;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+    }
     svg {
         overflow: visible;
     }
