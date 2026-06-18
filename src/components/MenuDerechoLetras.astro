@@ -2,22 +2,28 @@
 // Componente: MenuDerechoNumeros.astro
 const { currentNumber, miejercicio } = Astro.props;
 
-// 1. Limpieza a prueba de balas: Extraemos solo el número al final del string
-// Si recibe "letras1-1", match extraerá "1". Si recibe "letras1-10", extraerá "10".
+// 1. Limpieza a prueba de balas: Extraemos el número final (blindado contra barras "/" o espacios)
 const stringCrudo = String(currentNumber || miejercicio?.id || '');
-const numeroExtraido = stringCrudo.match(/\d+$/);
-const integerNumber = numeroExtraido ? parseInt(numeroExtraido[0], 10) : 0;
+const numeroExtraido = stringCrudo.match(/(\d+)\D*$/);
+const integerNumber = numeroExtraido ? parseInt(numeroExtraido[1], 10) : 0;
 
-// 2. Astro decide qué bloque mostrar primero según el número de la página
-// Corregimos el rango: El Grupo 1 ahora contiene los números del 1 al 5
-const paginaInicialMenu = (integerNumber >= 1 && integerNumber <= 5) ? 1 : 2;
-// 🔔 ALARMAS DE ASTRO (Se ven en la terminal)
+// 2. Astro decide qué bloque mostrar primero según el número real de la página
+let paginaInicialMenu = 1;
+
+if (integerNumber >= 1 && integerNumber <= 5) {
+  paginaInicialMenu = 1;
+} else if (integerNumber >= 6 && integerNumber <= 10) {
+  paginaInicialMenu = 2;
+} else if (integerNumber >= 11) {
+  paginaInicialMenu = 3;
+}
+
+// 🔔 ALARMAS DE ASTRO (Se ven en tu terminal)
 console.log("-----------------------------------------");
 console.log("🚨 ALARMA 1: Prop currentNumber:", currentNumber);
 console.log("🚨 ALARMA 2: Prop miejercicio?.id:", miejercicio?.id);
 console.log("🚨 ALARMA 3: stringCrudo evaluado:", stringCrudo);
 console.log("🚨 ALARMA 4: integerNumber final:", integerNumber);
-
 console.log("🚨 ALARMA 5: paginaInicialMenu calculada:", paginaInicialMenu);
 console.log("-----------------------------------------");
 ---
@@ -28,12 +34,13 @@ console.log("-----------------------------------------");
     <img src="/barraderecha/arribadere.svg" alt="Flecha Arriba" />
   </button>
 
+  {/* BLOQUE 1 (Páginas 1 a 5) */}
   <div id="grupo-numeros-1" class="bloque-numeros">
     <a href="/c-grafomotriz/letras1/letras1-1/" class="btn-numero">
       <img id="numero1" src={integerNumber === 1 ? "/barraderecha/11si.svg" : "/barraderecha/11l.svg"} alt="Número 0"/>
     </a>
-    <a  href="/c-grafomotriz/letras1/letras1-2/" class="btn-numero">
-      <img  src={integerNumber === 2 ? "/barraderecha/12si.svg" : "/barraderecha/12l.svg"} alt="Número 1" />
+    <a href="/c-grafomotriz/letras1/letras1-2/" class="btn-numero">
+      <img src={integerNumber === 2 ? "/barraderecha/12si.svg" : "/barraderecha/12l.svg"} alt="Número 1" />
     </a>
     <a href="/c-grafomotriz/letras1/letras1-3/" class="btn-numero">
       <img src={integerNumber === 3 ? "/barraderecha/13si.svg" : "/barraderecha/13l.svg"} alt="Número 2" />
@@ -46,6 +53,7 @@ console.log("-----------------------------------------");
     </a>
   </div>
 
+  {/* BLOQUE 2 (Páginas 6 a 10) */}
   <div id="grupo-numeros-2" class="bloque-numeros oculto">
     <a href="/c-grafomotriz/letras1/letras1-6/" class="btn-numero">
       <img src={integerNumber === 6 ? "/barraderecha/16lsi.svg" : "/barraderecha/16l.svg"} alt="Número 5" />
@@ -64,6 +72,14 @@ console.log("-----------------------------------------");
     </a>
   </div>
 
+  {/* BLOQUE 3 NUEVO (Página 11 - Un solo botón) */}
+  <div id="grupo-numeros-3" class="bloque-numeros oculto">
+    <a id="numero11a" href="/c-grafomotriz/letras1/letras1-11/" class="btn-numero">
+      {/* ⚠️ Recuerda cambiar estos nombres por los assets reales de tu botón 11 si los tienes */}
+      <img id="numero11" src={integerNumber === 11 ? "/barraderecha/21lsi.svg" : "/barraderecha/21l.svg"} alt="Número 10" />
+    </a>
+  </div>
+
   <button id="btn-abajo" class="btn-flecha" title="Ver siguientes números">
     <img src="/barraderecha/abajodere.svg" alt="Flecha Abajo" />
   </button>
@@ -71,6 +87,9 @@ console.log("-----------------------------------------");
 </div>
 
 <style>
+  #numero11a{
+    margin-bottom: 75%;
+  }
   :global(a) {
         position: relative;
         display: inline-block;
@@ -85,6 +104,11 @@ console.log("-----------------------------------------");
   #grupo-numeros-2 img{
     width: 125%;
     position: relative;
+  }
+   #grupo-numeros-3 img{
+    width: 148%;
+    position: relative;
+    right: 10%;
   }
   #btn-arriba{
     margin-bottom: -30%;
@@ -168,66 +192,71 @@ console.log("-----------------------------------------");
   /* Efecto sutil al pasar el mouse por encima de los números */
   .btn-numero:hover, .btn-flecha:hover:not(.desactivado) {
     transform: scale(1.25);
+    transform-origin: center center !important;
   }
 </style>
 
 <script>
   const inicializarMenuDerecho = () => {
-    console.log("🚀 ALARMA CLIENTE 1: Inicializando script de menú derecho...");
+    console.log("🚀 ALARMA CLIENTE: Inicializando script de 3 bloques...");
     
     const menuContainer = document.querySelector('.menu-interactivo-numeros');
-    if (!menuContainer) {
-        console.error("❌ ERROR CRÍTICO: No se encontró el contenedor principal (.menu-interactivo-numeros)");
-        return;
-    }
+    if (!menuContainer) return;
 
     const paginaInicial = parseInt(menuContainer.getAttribute('data-pagina-inicial') || '1', 10);
-    console.log("🚀 ALARMA CLIENTE 2: data-pagina-inicial leído en HTML:", paginaInicial);
 
     const btnArriba = document.getElementById('btn-arriba');
     const btnAbajo = document.getElementById('btn-abajo');
     const grupo1 = document.getElementById('grupo-numeros-1');
     const grupo2 = document.getElementById('grupo-numeros-2');
+    const grupo3 = document.getElementById('grupo-numeros-3');
 
-    if (!btnArriba || !btnAbajo || !grupo1 || !grupo2) {
-        console.error("❌ ERROR CRÍTICO: Falta algún botón o grupo en el HTML.", {
-            btnArriba: !!btnArriba, 
-            btnAbajo: !!btnAbajo, 
-            grupo1: !!grupo1, 
-            grupo2: !!grupo2
-        });
+    // Validación estricta incluyendo el nuevo grupo 3
+    if (!btnArriba || !btnAbajo || !grupo1 || !grupo2 || !grupo3) {
+        console.error("❌ ERROR CRÍTICO: Falta algún elemento en el HTML.");
         return;
     }
 
     let paginaActualMenu = paginaInicial;
 
     const actualizarVistaMenu = () => {
-      console.log("🔄 Actualizando vista a la página del menú:", paginaActualMenu);
+      console.log("🔄 Cambiando vista del menú al Bloque:", paginaActualMenu);
+      
+      // 1. Ocultamos todos los grupos por defecto
+      grupo1.classList.add('oculto');
+      grupo2.classList.add('oculto');
+      grupo3.classList.add('oculto');
+      
+      // 2. Encendemos todas las flechas por defecto (Mantiene activo el Bloque Central)
+      btnArriba.classList.remove('desactivado');
+      btnAbajo.classList.remove('desactivado');
+
+      // 3. Aplicamos excepciones por bloque
       if (paginaActualMenu === 1) {
         grupo1.classList.remove('oculto');
-        grupo2.classList.add('oculto');
-        btnArriba.classList.add('desactivado');
-        btnAbajo.classList.remove('desactivado');
-      } else {
-        grupo1.classList.add('oculto');
+        btnArriba.classList.add('desactivado'); // Bloque superior: no sube más
+      } else if (paginaActualMenu === 2) {
         grupo2.classList.remove('oculto');
-        btnArriba.classList.remove('desactivado');
-        btnAbajo.classList.add('desactivado');
+        // Bloque central: Ambas flechas se quedan activas automáticamente
+      } else if (paginaActualMenu === 3) {
+        grupo3.classList.remove('oculto');
+        btnAbajo.classList.add('desactivado'); // Bloque inferior: no baja más
       }
     };
 
     actualizarVistaMenu();
 
+    // Comportamiento de clics infinito/secuencial controlado
     btnArriba.addEventListener('click', () => {
-      if (paginaActualMenu === 2) {
-        paginaActualMenu = 1;
+      if (paginaActualMenu > 1) {
+        paginaActualMenu--;
         actualizarVistaMenu();
       }
     });
 
     btnAbajo.addEventListener('click', () => {
-      if (paginaActualMenu === 1) {
-        paginaActualMenu = 2;
+      if (paginaActualMenu < 3) {
+        paginaActualMenu++;
         actualizarVistaMenu();
       }
     });
