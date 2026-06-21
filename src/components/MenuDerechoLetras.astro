@@ -10,11 +10,11 @@ const integerNumber = numeroExtraido ? parseInt(numeroExtraido[1], 10) : 0;
 // 2. Astro decide qué bloque mostrar primero según el número real de la página
 let paginaInicialMenu = 1;
 
-if (integerNumber >= 1 && integerNumber <= 5) {
+if (integerNumber >= 1 && integerNumber <= 4) {
   paginaInicialMenu = 1;
-} else if (integerNumber >= 6 && integerNumber <= 10) {
+} else if (integerNumber >= 5 && integerNumber <= 9) {
   paginaInicialMenu = 2;
-} else if (integerNumber >= 11) {
+} else if (integerNumber >= 10) {
   paginaInicialMenu = 3;
 }
 
@@ -48,13 +48,13 @@ console.log("-----------------------------------------");
     <a href="/c-grafomotriz/letras1/letras1-4/" class="btn-numero">
       <img src={integerNumber === 4 ? "/barraderecha/14si.svg" : "/barraderecha/14l.svg"} alt="Número 3" />
     </a>
-    <a href="/c-grafomotriz/letras1/letras1-5/" class="btn-numero">
-      <img src={integerNumber === 5 ? "/barraderecha/15lsi.svg" : "/barraderecha/15l.svg"} alt="Número 4" />
-    </a>
   </div>
 
   {/* BLOQUE 2 (Páginas 6 a 10) */}
   <div id="grupo-numeros-2" class="bloque-numeros oculto">
+    <a href="/c-grafomotriz/letras1/letras1-5/" class="btn-numero">
+      <img src={integerNumber === 5 ? "/barraderecha/15lsi.svg" : "/barraderecha/15l.svg"} alt="Número 4" />
+    </a>
     <a href="/c-grafomotriz/letras1/letras1-6/" class="btn-numero">
       <img src={integerNumber === 6 ? "/barraderecha/16lsi.svg" : "/barraderecha/16l.svg"} alt="Número 5" />
     </a>
@@ -64,20 +64,21 @@ console.log("-----------------------------------------");
     <a href="/c-grafomotriz/letras1/letras1-8/" class="btn-numero">
       <img src={integerNumber === 8 ? "/barraderecha/18lsi.svg" : "/barraderecha/18l.svg"} alt="Número 7" />
     </a>
+  </div>
+
+  {/* BLOQUE 3 NUEVO (Página 11 - Un solo botón) */}
+  <div id="grupo-numeros-3" class="bloque-numeros3 oculto">
     <a href="/c-grafomotriz/letras1/letras1-9/" class="btn-numero">
       <img src={integerNumber === 9 ? "/barraderecha/19lsi.svg" : "/barraderecha/19l.svg"} alt="Número 8" />
     </a>
     <a href="/c-grafomotriz/letras1/letras1-10/" class="btn-numero">
       <img id="numero10" src={integerNumber === 10 ? "/barraderecha/20lsi.svg" : "/barraderecha/20l.svg"} alt="Número 9" />
     </a>
-  </div>
-
-  {/* BLOQUE 3 NUEVO (Página 11 - Un solo botón) */}
-  <div id="grupo-numeros-3" class="bloque-numeros oculto">
     <a id="numero11a" href="/c-grafomotriz/letras1/letras1-11/" class="btn-numero">
       {/* ⚠️ Recuerda cambiar estos nombres por los assets reales de tu botón 11 si los tienes */}
       <img id="numero11" src={integerNumber === 11 ? "/barraderecha/21lsi.svg" : "/barraderecha/21l.svg"} alt="Número 10" />
     </a>
+    
   </div>
 
   <button id="btn-abajo" class="btn-flecha" title="Ver siguientes números">
@@ -87,8 +88,15 @@ console.log("-----------------------------------------");
 </div>
 
 <style>
-  #numero11a{
-    margin-bottom: 75%;
+    /* Estilos para los bloques de números */
+  .bloque-numeros3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36%; /* Espacio entre cada número */
+    width: 100%;
+    position: relative; /* Para posicionar las flechas dentro del bloque */
+    bottom: 2%;
   }
   :global(a) {
         position: relative;
@@ -99,11 +107,13 @@ console.log("-----------------------------------------");
   #grupo-numeros-1 img{
     width: 125%;
     position: relative;
+    top: 46%;
 
   }
   #grupo-numeros-2 img{
     width: 125%;
     position: relative;
+    top: 46%;
   }
    #grupo-numeros-3 img{
     width: 148%;
@@ -154,7 +164,7 @@ console.log("-----------------------------------------");
 
   /* 🚀 LA MAGIA: Clase que desactiva la flecha cuando topamos el límite */
   .desactivado {
-    opacity: 0.3; /* Se vuelve semitransparente */
+    opacity: 0; /* Se vuelve semitransparente */
     pointer-events: none; /* Bloquea el clic */
     cursor: default;
   }
@@ -164,7 +174,7 @@ console.log("-----------------------------------------");
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15.5%; /* Espacio entre cada número */
+    gap: 18.2%; /* Espacio entre cada número */
     width: 100%;
     position: relative; /* Para posicionar las flechas dentro del bloque */
     bottom: 8%;
